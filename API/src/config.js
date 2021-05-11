@@ -1,22 +1,21 @@
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import morgan from 'morgan'
 
 export default (app) => {
-  app.disable('x-powered-by');  
+  app.disable('x-powered-by')
 
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(cors());
-  app.use(morgan("dev"));
+  app.use(bodyParser.json())
+  app.use(bodyParser.urlencoded({ extended: false }))
+  app.use(cors())
+  app.use(morgan('dev'))
 
-  app.use((err, req, res, next) => { 
-    res.status(err.status || 500);
+  app.use((err, req, res, next) => {
+    res.status(err.status || 500)
     res.json({
       errors: {
-        message: err.message,
-      },
-    });
-  });
-
+        message: err.message
+      }
+    })
+  })
 }

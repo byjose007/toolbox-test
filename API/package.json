@@ -12,6 +12,7 @@
   "author": "Byron Armijos",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.14.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -21,6 +22,7 @@
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "standard": "^16.0.3"
   }
 }

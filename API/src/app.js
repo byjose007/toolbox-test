@@ -1,13 +1,13 @@
-import express from "express";
-import config from "./config";
+import express from 'express'
+import config from './config'
 import router from './router'
 
-const app = express();
+const app = express()
 // config
-config(app);
+config(app)
 // Router
-router(app);
+router(app)
 
 app.listen(3000, () =>
-  console.log("El servidor ha sido inicializado: http://localhost:3000"),
-);
+  console.log('El servidor ha sido inicializado: http://localhost:3000')
+)
