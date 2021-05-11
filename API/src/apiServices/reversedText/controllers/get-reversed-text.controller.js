@@ -1,18 +1,16 @@
-import GetUserService from "../services/get-user.service";
-const getUserService = new GetUserService();
+exports.getReversedText = (req, res) => {
+  if (req.query.text) {
+    const originalText = req.query.text
+    const reversedText = originalText.split('').reverse().join('')
+    const isPalindromo = originalText.toLowerCase() === reversedText.toLowerCase()
 
-
-exports.getReversedText = async (req, res) => {
-    const text = req.params.text;
-    let reversedText = text.split('').reverse().join('');
-    console.log(text);
-    if (reversedText) {
-        res.status(200).json({
-            text: reversedText
-        });
-    } else {
-        res.status(400).send({
-            error: "No text." 
-        })
-    }
-};
+    res.status(200).json({
+      text: reversedText,
+      palindromo: isPalindromo
+    })
+  } else {
+    res.status(400).send({
+      error: 'No text.'
+    })
+  }
+}
